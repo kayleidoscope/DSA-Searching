@@ -79,8 +79,33 @@ function question5Tree() {
     return tree
 }
 
-const tree = question5Tree()
+// const tree = question5Tree()
 
-console.log(tree.preOrder())
-console.log(tree.inOrder())
-console.log(tree.postOrder())
+// console.log(tree.preOrder())
+// console.log(tree.inOrder())
+// console.log(tree.postOrder())
+
+function question6Tree() {
+    const tree = new BinarySearchTree()
+
+    tree.insert(4, "Captain Picard")
+    tree.insert(2, "Commander Riker")
+    tree.insert(1, "Lt. Cmdr. Worf")
+    tree.insert(0, "Lt. security-officer")
+    tree.insert(3, "Lt. Cmdr. LaForge")
+    tree.insert(5, "Commander Data")
+    tree.insert(7, "Lt Cmdr. Crusher")
+    tree.insert(6, "Lt. Selar")
+
+    // console.log(tree)
+    return tree
+}
+
+// question6Tree()
+
+function rankOffers(tree) {
+    let order = tree.bfs(tree)
+    return order
+}
+
+console.log(rankOffers(question6Tree()))

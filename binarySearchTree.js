@@ -1,3 +1,50 @@
+class _Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class Queue {
+    constructor() {
+        this.first = null
+        this.last = null
+    }
+
+    enqueue(data) {
+        const node = new _Node(data)
+
+        if (this.first === null) {
+            this.first = node;
+            this.last = this.first
+            return
+        }
+
+        if (this.first.next === null) {
+            this.first.next = node
+        } else {
+            this.last.next = node;
+        }
+
+        //make the new node the last item on the list
+        this.last = node;
+    }
+
+    dequeue() {
+        if (this.first === null) {
+            return
+        }
+        const node = this.first
+        this.first = this.first.next
+
+        if (node === this.last) {
+            this.last = null
+        }
+
+        return node.value;
+    }
+}
+
 class BinarySearchTree {
     constructor(key = null, value = null, parent = null) {
         this.key = key;
@@ -184,9 +231,9 @@ class BinarySearchTree {
     //breadth first search
     bfs(tree, values = []) {
         const queue = new Queue(); // Assuming a Queue is implemented (refer to previous lesson on Queue)
-        const node = tree.root;
-        queue.enqueue(node);
-        while (queue.length) {
+        const first = tree;
+        queue.enqueue(first);
+        while (queue.first) {
             const node = queue.dequeue(); //remove from the queue
             values.push(node.value); // add that value from the queue to an array
 
