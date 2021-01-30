@@ -33,3 +33,16 @@ function binarySearch(array, value, start, end) {
 */
 
 binarySearch([3, 5, 6, 8, 11, 12, 14, 15, 17, 18], 16, undefined, undefined)
+
+function findDewey(array, number, bookTitle) {
+    let books = array
+    let index = binarySearch(books, number, undefined, undefined)
+    let section = array[index]
+    //in this example, index would also contain an array of numbers within that index number
+
+    for (let i = 0; i < section.length; i++) {
+        if (section[i] === bookTitle) {
+            return section[i]
+        }
+    }
+}
