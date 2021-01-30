@@ -46,3 +46,13 @@ function findDewey(array, number, bookTitle) {
         }
     }
 }
+
+/*
+
+4.
+
+- 14 19 15 27 25 79 90 91 89 35
+
+- 8 7 5 6 11 10 9
+
+*/
