@@ -145,15 +145,39 @@ class BinarySearchTree {
     }
 
     //depth first search
-    dfs(values=[]) {
+    inOrder(values=[]) {
         if (this.left) {
-            values = this.left.dfs(values);
+            values = this.left.inOrder(values);
         }
         values.push(this.value);
 
         if (this.right) {
-            values = this.right.dfs(values);
+            values = this.right.inOrder(values);
         }
+        return values;
+    }
+
+    preOrder(values=[]) {
+        values.push(this.value);
+        if (this.left) {
+            values = this.left.preOrder(values);
+        }
+
+        if (this.right) {
+            values = this.right.preOrder(values);
+        }
+        return values;
+    }
+
+    postOrder(values=[]) {
+        if (this.left) {
+            values = this.left.postOrder(values);
+        }
+        
+        if (this.right) {
+            values = this.right.postOrder(values);
+        }
+        values.push(this.value);
         return values;
     }
 

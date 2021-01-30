@@ -11,7 +11,7 @@ function binarySearch(array, value, start, end) {
     const index = Math.floor((start + end) / 2);
     const item = array[index];
 
-    console.log(start, end);
+    // console.log(start, end);
     if (item == value) {
         return index;
     }
@@ -56,3 +56,31 @@ function findDewey(array, number, bookTitle) {
 - 8 7 5 6 11 10 9
 
 */
+
+function question5Tree() {
+    const tree = new BinarySearchTree()
+
+    tree.insert(25, 25)
+    tree.insert(15, 15)
+    tree.insert(50, 50)
+    tree.insert(10, 10)
+    tree.insert(24, 24)
+    tree.insert(35, 35)
+    tree.insert(70, 70)
+    tree.insert(4, 4)
+    tree.insert(12, 12)
+    tree.insert(18, 18)
+    tree.insert(31, 31)
+    tree.insert(44, 44)
+    tree.insert(66, 66)
+    tree.insert(90, 90)
+    tree.insert(22, 22)
+
+    return tree
+}
+
+const tree = question5Tree()
+
+console.log(tree.preOrder())
+console.log(tree.inOrder())
+console.log(tree.postOrder())
