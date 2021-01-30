@@ -108,4 +108,19 @@ function rankOffers(tree) {
     return order
 }
 
-console.log(rankOffers(question6Tree()))
+// console.log(rankOffers(question6Tree()))
+
+function maxProfit(array) {
+    let maxProfit = 0
+    let dayToBuy = 0;
+    for (let i = 0; i < array.length - 1; i++) {
+        let profit = array[i + 1] - array[i]
+        if (profit > maxProfit) {
+            maxProfit = profit
+            dayToBuy = i + 1
+        }
+    }
+    return {maxProfit, dayToBuy}
+}
+
+console.log(maxProfit([128, 97, 121, 123, 98, 97, 105]))
